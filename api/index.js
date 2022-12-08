@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const { Field, isReady, Encryption, Signature, PublicKey, PrivateKey } = require('snarkyjs');
-const getRandomNumber = require('./getRandomNumber');
+const getRandomNumber = require('../src/getRandomNumber');
 
 
 const app = express();
@@ -19,7 +19,7 @@ const loadSnarky = (async () => {
   snarky = true;
 });
 
-app.get('/randomNumber', async (req, res) => {
+app.get('/api/randomNumber', async (req, res) => {
   await loadSnarky();
   res.header("Access-Control-Allow-Origin", "*");
   const rand = getRandomNumber();
