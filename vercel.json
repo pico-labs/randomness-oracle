@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "src/index.js",
-      "use": "@now/node"
+  "functions": {
+    "src/index.js": {
+      "maxDuration": 20
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
