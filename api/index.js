@@ -19,11 +19,16 @@ const loadSnarky = (async () => {
   snarky = true;
 });
 
-app.get('/api/randomNumber', async (req, res) => {
+app.get('/api/randomNumber/:executorPublicKey', async (req, res) => {
   await loadSnarky();
-  res.header("Access-Control-Allow-Origin", "*");
-  const rand = getRandomNumber();
-  return res.send(rand);
+  try {
+    const pubkey = PublicKey.fromBase58(req.params.executorPublicKey);
+    res.header("Access-Control-Allow-Origin", "*");
+    const rand = getRandomNumber(pubkey);
+    return res.send(rand);
+  } catch(e) {
+    next(e);
+  }
 });
 
 app.listen(port)
