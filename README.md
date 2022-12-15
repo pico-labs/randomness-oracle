@@ -1,8 +1,10 @@
 # Randomness Oracle
 
 This repo is part of a submission to [ZK Ignite Cohort 0](https://minaprotocol.com/blog/zkignite-cohort0_), with these related repositories:
-- https://github.com/pico-labs/coinflip-frontend
-- https://github.com/pico-labs/coinflip-executor-contract
+- UI: https://github.com/pico-labs/coinflip-frontend
+- Contract: https://github.com/pico-labs/coinflip-executor-contract
+
+The deployed project can be viewed at https://coinflip-frontend-ruby.vercel.app/
 
 See an example of how a client might use the response:
 ```
